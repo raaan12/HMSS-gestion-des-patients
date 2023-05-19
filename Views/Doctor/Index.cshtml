@@ -1,0 +1,59 @@
+﻿@model IEnumerable<HMSS.Models.Doctor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.speciality)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department_id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <br />
+    <button onclick="location.href='@Url.Action("Index", "Patient")'" class="btn btn-primary mb1 bg-green">Patients list</button>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.speciality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department_id)
+            </td>
+           
+        </tr>
+}
+    </tbody>
+</table>
